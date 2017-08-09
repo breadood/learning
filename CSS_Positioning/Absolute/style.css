@@ -1,0 +1,25 @@
+.box {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.bluebox {
+	background-color: blue;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}
+
+.greenbox {
+	background-color: green;
+}
+
+.container {
+	background-color: #cccccc;
+	height: 200px;
+	width: 200px;
+	margin-top: 150px;
+	top: 200px;
+	position: absolute;
+}

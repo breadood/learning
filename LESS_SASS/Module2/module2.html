@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LESS is More</title>
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+    <script src="less.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header>
+        <h1>LESS</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Link to a .less file, and include a script to less.js file</p>
+        </section>
+        <section>
+            <h2>Tips</h2>
+            <ul>
+                <li>Less should be done on server side</li>
+                <li>Nesting Selectors</li>
+                <li>Import will copy the linked spreadsheets</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Variables</h2>
+            <ul>
+                <li>Constants</li>
+                <li>colors</li>
+                <li>units</li>
+                <li>strings</li>
+            </ul>
+            <h2>Operations</h2>
+            <ul>
+                <li>+</li>
+                <li>*</li>
+                <li>/</li>
+                <li>()</li>
+                <li>Work with variables</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mixins</h2>
+            <p>It is like a function</p>
+            <pre>
+                .my-mixins(@myvar: 5px) {
+                  border-radius: @myvar;
+                }
+            </pre>
+            <ul>
+                <li>Using overloads</li>
+                <li>Using guards (when)</li>
+                <li>Using type guards (when (isnumber()))</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Nesting</h2>
+            <ul>
+                <li>Use nesting to avoid writing parent elements multiple times</li>
+                <li>Use &amp; as combinator</li>
+                <li>Not about run time/compilation, but design time</li>
+            </ul>
+            <pre>
+               a {
+                 &amp;:hover {
+                   xxx;
+                 }
+               }
+           </pre>
+        </section>
+        
+        <section>
+            <h2>Namespaces</h2>
+            <p>Namespace are made with # like an id selector</p>
+            
+            <h2>Scoping</h2>
+            <p>Mixins will copy over and compile, execute at run time</p>
+        </section>
+    </main>
+</body>
+
+</html>

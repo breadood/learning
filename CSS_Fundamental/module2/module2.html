@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Module 2 - Inheritance, Cascading</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main>
+	<h1>Inherintance and Cascading</h1>
+		<section>
+			<p>a paragraph in a section</p>
+				<div>
+					a paragraph in a div in a section
+				</div>
+		</section>
+			
+
+		<section>
+			<h2>Specificity, A B C:</h2>
+			<p>A: Count of ID Selectors</p>
+			<p>B: Count of Class/Attribute Selectors</p>
+			<p>C: Count of Type Selectors</p>
+			<h3>Examples: </h3>
+			<table>
+			<thead>
+				<tr>
+					<th>Selector</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>Specificity</th>
+				</tr>
+			</thead>
+				<tbody>
+					<tr>
+						<td>*</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>LI</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>LI.red</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>11</td>
+					</tr>
+					<tr>
+						<td>#ID</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>100</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Inheritance</h2>
+			<h3>Inherited Attributes</h3>
+			<ul>
+				<li>font</li>
+				<li>list style</li>
+			</ul>
+			<h3>Un-Inherited Attributes</h3>
+			<ul>
+				<li>Border</li>
+				<li>Padding</li>
+			</ul>
+
+			<h2>Misc.</h2>
+			<p>stylesheet &lt; inline &lt; !important</p>
+
+
+		</section>
+	</main>
+</body>
+</html>

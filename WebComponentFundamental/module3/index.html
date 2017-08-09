@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Custom Element</title>
+  </head>
+  <body>
+    <main>
+      <h1>Custom Element</h1>
+      <section>
+        <h2>Content Outline</h2>
+        <ol>
+          <li>Core Functionality</li>
+          <li>Register Custom Element</li>
+          <li>Instatiate Custom Element</li>
+          <li>Extend Custom Element</li>
+          <li>Lifecycle/Callback</li>
+          <li>Naming</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Core Functionality</h2>
+        <ol>
+          <li>Define HTML elements</li>
+          <li>Extend existing elements</li>
+        </ol>
+        <p>* Naming has to have "-"</p>
+      </section>
+
+      <section>
+        <h2>Register Custom Element</h2>
+        <ol>
+          <li>Create prototype: <code>var SlickTabs = Object.create(HTMLElement.prototype)</code></li>
+          <li>Register: <code>document.registerElement('slick-tabs')</code></li>
+          <li>Use it with: <code>document.body.appendChild(new SlickTabs())</code></li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Instatiate Custom Element</h2>
+        <ul>
+          <li>Markup</li>
+          <li>new Operator, and append</li>
+          <li>document.createElement(), and append</li>
+          <li>document.body.innerHTML</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Extend Custom Element</h2>
+        <ol>
+          <li>Declare in markup with "is" attribute</li>
+          <li>Javascript</li>
+          <li>new Operator</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Lifecycle/Callback</h2>
+      </section>
+
+      <section>
+        <h2>Naming</h2>
+      </section>
+    </main>
+  </body>
+</html>

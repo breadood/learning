@@ -1,0 +1,19 @@
+.box {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.bluebox {
+	background-color: blue;
+	float: left;
+}
+
+.greenbox {
+	background-color: green;
+	float: right;
+}
+
+section {
+	clear: left;
+}

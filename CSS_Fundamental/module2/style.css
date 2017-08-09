@@ -1,0 +1,11 @@
+main {
+	font-size: 150%;
+}
+
+main {
+	font-size: 1em;
+}
+
+/* same selector will take the last rule, override */
+
+/* Cascading works as specificity level */

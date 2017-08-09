@@ -1,0 +1,16 @@
+.box {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.bluebox {
+	background-color: blue;
+	position: fixed;
+	/*top: 150px;*/
+	bottom: 150px;
+}
+
+.greenbox {
+	background-color: green;
+}

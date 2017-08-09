@@ -1,0 +1,22 @@
+@import "mixins";
+
+@main-color: pink;
+@main-font-family: vernada,
+sans-serif;
+body {
+    font-family: @main-font-family;
+}
+
+header {
+    
+    h1 {
+        color: @main-color;
+    }
+}
+
+ul {
+    border-width: 2px;
+    border-style: solid;
+    border-color: aquamarine;
+    .rounded-corners;
+}

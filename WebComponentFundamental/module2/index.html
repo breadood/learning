@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Template</title>
+  </head>
+  <body>
+    <section>
+      <h1>Existing Template Technology</h1>
+
+      <h2>HTML in Script Tag</h2>
+      <code>&lt;script type="text/custom-name-here"&gt;</code>
+      <p>Nothing inside runs or renders</p>
+      <p>Not DOM Element</p>
+
+      <h2>Hidden DOM Elements</h2>
+      <pre>&lt;div style="display: none;" id="my-template" &gt;</pre>
+      <p>Easy to clone, DOM element</p>
+      <p>Everything runs, may throw 404</p>
+    </section>
+
+    <section>
+      <h1>HTML5 Template</h1>
+      <h2>Inert</h2>
+      <p>Does not run, anything will not run</p>
+
+      <h2>Hidden From Selectors</h2>
+      <p>Cannot be selected/traversed by ordinary method</p>
+
+      <h2>Flexible Placement</h2>
+      <p>Can be placed anywhere</p>
+    </section>
+
+    <section>
+      <h1>Basic Definition/Activation</h1>
+      <ol>
+        <li>Declare a <code>&lt;template&gt;</code> tag</li>
+        <li>Obtain this tag by calling <code>var template = document.querySelector()</code></li>
+        <li>Clone the template by <code>document.importNode(template.content, true)</code></li>
+        <li>Insert it by <code>document.body.append()</code> the clone</li>
+      </ol>
+    </section>
+
+  <section>
+    <h1>Injecting Dynamic Data</h1>
+    <ol>
+      <li>Get the reference to the template</li>
+      <li>Clone the template by using <code>document.importNode</code></li>
+      <li>Change the target element within template dynamically</li>
+      <li>Append cloned template</li>
+    </ol>
+  </section>
+
+  <section>
+    <h1>Nested Templates</h1>
+    <p>Nested templates need to be cloned/activated each independently.</p>
+  </section>
+  </body>
+</html>

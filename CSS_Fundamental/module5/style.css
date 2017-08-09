@@ -1,0 +1,41 @@
+body {
+	font-family: Verdana,sans-serif;
+}
+
+main section div {
+	background-color: #cccccc
+}
+
+.static-div {
+	position: static;
+}
+
+.relative-div {
+	position: relative;
+	top: 10px;
+}
+
+.absolute-div {
+	position: absolute;
+	left: 70px;
+}
+
+.fixed-div {
+	position: fixed;
+	left: 20px;
+}
+
+.float div {
+	background-color: #cccccc
+	width: 20px;
+	border-style: solid;
+	margin-top: 10px;
+}
+
+#div1 {
+	display: inline;
+}
+
+#div2 {
+	display: inline;
+}

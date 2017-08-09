@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<main>
+	<h1>SVG Rect</h1>
+		<svg>
+			<rect width="50" height="200" style="fill: blue;"/>
+		</svg>
+    <h1>SVG D3</h1>
+	</main>
+	
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<script>
+            d3.select("main")
+                .append("svg")
+                .append("rect")
+                  .attr("width", 50)
+                  .attr("height", 200)
+                  .style("fill", "pink");
+    </script>
+</body>
+</html>
