@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="js/libs/vue.js"></script>
-  </head>
-  <body>
-  <header>
-    <h1>Current Time</h1>
-    <p>{{timer}}</p>
-  </header>
 
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="js/libs/vue.js"></script>
+</head>
+
+<body>
+  <section id="ex-1">
+    <h1>Example 1: Declarative Rendering</h1>
+    <p>Current Time: {{timer}}</p>
+  </section>
+
+  <section id="ex-2">
+    <h1>Example 2: Bind Attribute</h1>
+    <span v-bind:title="message">Hover over to see the time of page load</span>
+  </section>
+
+  <section id="ex-3">
+    <h1>Example 3: Conditional Directives</h1>
+    <p v-if="show">Can you see me?</p>
+    <button type="button" name="button" id="show-button">Click me!</button>
+  </section>
   <script type="text/javascript" src="js/core.js"></script>
-  </body>
+</body>
+
 </html>
