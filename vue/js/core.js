@@ -1,8 +1,8 @@
 var example1 = new Vue({
-    el: '#ex-1',
-    data: {
-      timer: '' + new Date()
-    }
+  el: '#ex-1',
+  data: {
+    timer: '' + new Date()
+  }
 });
 
 var example2 = new Vue({
