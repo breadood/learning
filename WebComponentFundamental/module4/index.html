@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shadow DOM Fundamentals</title>
+</head>
+<body>
+	<header>
+		<h1>Shadow DOM Fundamentals</h1>
+	</header>
+
+	<section>
+		<h2>The Problem</h2>
+		<ul>
+			<li>Light DOM</li>
+			<li>Shadow DOM: Hide complexity</li>
+			<li>Logical DOM = Light DOM + Shadow DOM</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Shadow DOM in Native HTML</h2>
+		<h3>Example</h3>
+
+		<h4>Video has a Shadow DOM</h4>
+		<video src=""></video>
+
+		<h4>Input has Shadown DOM</h4>
+		<input type="date">
+
+		<p>Shadow DOM is very similar to iframe, but more semantic, seperation, no clunky markup</p>
+	</section>
+
+	<section>
+		<h2>Create Shadow DOM</h2>
+		<ol>
+			<li>Select Shadow host</li>
+			<li>Create shadow root</li>
+			<li>Add element: innerHTML, appendChild</li>
+		</ol>
+
+		<h3>Example</h3>
+		<div id="host"> 
+		</div>
+
+		<template>
+			<style>
+				p {color: green; }
+			</style>
+			<p>Hello from Shadow DOM</p>	
+		</template>
+
+		<script>
+			var host = document.getElementById('host');
+			var root = host.createShadowRoot();
+
+			var template = document.querySelector('template');
+			root.appendChild(document.importNode(template.content, true));
+		</script>		
+	</section>
+
+	<section>
+		<h2>Shadow Root HTML Method</h2>
+		<h3>These Normal HTML method will NOT work for shadown DOM</h3>
+		<ol>
+			<li>document.querySelector</li>
+			<li>document.querySelectorAll</li>
+			<li>document.getElementById</li>
+			<li>document.getElementsByClassName</li>
+			<li>document.getElementsByTagName</li>
+		</ol>
+
+		<h3>We should use</h3>
+		<ol>
+			<li>root.querySelector --> root is the shadow root, not the shadow host</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>Javascript Encapsulation in Shadow DOM</h2>
+		<p>script tag in shadow DOM is NOT encapsulated</p>
+	</section>
+</body>
+</html>

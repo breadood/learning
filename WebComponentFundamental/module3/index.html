@@ -31,37 +31,96 @@
       <section>
         <h2>Register Custom Element</h2>
         <ol>
-          <li>Create prototype: <code>var SlickTabs = Object.create(HTMLElement.prototype)</code></li>
-          <li>Register: <code>document.registerElement('slick-tabs')</code></li>
-          <li>Use it with: <code>document.body.appendChild(new SlickTabs())</code></li>
+          <li>Create prototype: <code>var SlickTabs = Object.create(HTMLElement.prototype)</code>, if extending use HTMLButtonElement.prototype for example</li>
+          <li>Register: <code>document.registerElement('slick-tabs')</code>, registering custom elements</li>
+          <li>Use it with: <code>document.body.appendChild(new SlickTabs())</code>, we can also you a tag. <code>&lt;slick-tabs&gt;</code></li>
+          <li>Use <code>.createdCallback = function() {}</code> to add innerHtml</li>
         </ol>
       </section>
 
       <section>
         <h2>Instatiate Custom Element</h2>
         <ul>
-          <li>Markup</li>
-          <li>new Operator, and append</li>
+          <li>Markup in HTML</li>
+          <li>&lt;new&gt; operator, and append</li>
           <li>document.createElement(), and append</li>
           <li>document.body.innerHTML</li>
         </ul>
+        <h3>Example</h3>
+          <div>
+            <code>
+              <pre>
+                var MyElementProto = Object.create(HTMLElement.prototype);
+
+                MyElement.createCallback = function() {
+                  this.innerHTML = "&lt;My Element&gt;"
+                }
+              </pre>
+            </code>
+          </div>
       </section>
 
       <section>
         <h2>Extend Custom Element</h2>
         <ol>
           <li>Declare in markup with "is" attribute</li>
-          <li>Javascript</li>
+          <li>Javascript <code>var button = document.createElement('button', 'super-button')</code>  </li>
           <li>new Operator</li>
         </ol>
+        <h3>Example</h3>
+        <div>
+          <code>
+            <pre>
+              var MyButtonProto = Object.create(HTMLButtonElement.prototype);
+
+              MyButton.createdCallback = function() {
+                this.innerHTML = "My Special Button";
+                this.value = "Default  Value";
+              }
+
+              var MyButton = document.registerElement('my-button', {
+                prototype: MyButtonProto,
+                extend: 'button'
+              });
+
+              // Use &lt;button is="my-button" /&gt;;
+              // also we can
+
+              var button = document.createElement('button', 'my-button');
+              document.body.appendChild(button);
+            </pre>
+          </code>
+        </div>
       </section>
 
       <section>
         <h2>Lifecycle/Callback</h2>
+        <ol>
+          <li>createdCallback: created</li>
+          <li>attachedCallback: inserted in DOM</li>
+          <li>detachedCallback: removed in DOM</li>
+          <li>attributeChangedCallback: attributed are edited</li>
+        </ol>
+        <h3>Example</h3>
+        <div><code>
+            <pre>
+              Proto.createdCallback = function () {};
+              Proto.attachedCallback = function () {};
+              Proto.detachedCallback = function () {};
+              Proto.attributeChangedCallback = function (attrName, oldValue, newValue) {};
+            </pre>
+        </code></div>
       </section>
 
       <section>
         <h2>Naming</h2>
+        <ol>
+          <li>use the first part of the customed element as namespace</li>
+          <li>Company Name: twitter-tweet-button</li>
+          <li>Brand Name: kendoui-grid</li>
+          <li>Application Name: wechat-button</li>
+          <li>Github Username: breadood-button</li>
+        </ol>
       </section>
     </main>
   </body>
