@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shadow DOM Insertion Points, Events</title>
+</head>
+<body>
+	<header>
+		<h1>Shadow DOM Insertion Points and Events</h1>
+	</header>
+
+	<main>
+		<section class="ex1">
+			<h2>Insertion Points</h2>
+			<h3>Example</h3>
+
+			<template>
+				<fieldset>
+					<legend>
+						<content select="h1"></content>
+					</legend>
+
+					<content select="p"></content>
+
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+
+					<input type="submit" value="Submit Comment">
+
+					<content select=".footer"></content>
+
+					<content>
+						<!-- match all -->
+					</content>
+				</fieldset>
+			</template>
+
+			<comment-form>
+				<h1>This is a h1 tag from comment form</h1>
+				<p>P tag in comment form</p>
+
+				<div class="footer">Footer from comment form</div>
+			</comment-form>
+			
+			<script>
+				var CommentProto = Object.create(HTMLElement.prototype);
+
+				CommentProto.createdCallback = function() {
+					var template = document.querySelector('template');
+					var shadow = this.createShadowRoot();
+					shadow.appendChild(document.importNode(template.content, true));
+				}
+
+				document.registerElement('comment-form', {
+					prototype: CommentProto
+				});
+			</script>
+			
+		</section>
+
+		<section class="ex2">
+			<h2>Insertion Points vs Distributed Notes</h2>
+
+			<h3>Example</h3>
+
+			<div class="ex2">
+				<h1>Header in Light DOM</h1>
+
+			</div>
+			<p>Note the h1 tag is in Shadow DOM</p>
+
+			<pre>
+				<code>
+					console.log(document.querySelector('h1')); // h1 tag is found
+					console.log(document.querySelector('content h1')); // null
+					console.log(root.querySelector('content')) // content tag is found
+					console.log(root.querySelector('content').contains('h1')) //false
+				</code>
+			</pre>
+			<script>
+				var root = document.querySelector('div.ex2').createShadowRoot();
+				root.innerHTML = '<content select="h1"></content>';
+			</script>
+		</section>
+
+		<section class="ex3">
+			<h2>Content Selectors</h2>
+			<ul>
+				<li>Type Selector select="p"</li>
+				<li>Class Selector select=".class"</li>
+				<li>Attribute Selector select="inpute [type=text]"</li>
+				<li>ID Selector select="#id"</li>
+				<li>Negation  Pseudo-class select=":not(.whatIWant)"</li>
+				<li>Universal/Catch-All not specify selector</li>
+			</ul>
+
+			<p>Note: Only select immediate children</p>
+		</section>
+
+		<section>
+			<h2>Shadow Insertion Points</h2>
+			<p>Nested Shadow Roots</p>
+			<p>Use shadow tag to match previous shadow root</p>
+			<p>Only last shadow root is rendered</p>
+			<p>Only 1 shadow tag in a shadow root</p>
+			<p>We can have root 3 -> root 2 -> root 1 + content</p>
+		</section>
+
+		<section>
+			
+		</section>
+	</main>
+</body>
+</html>
