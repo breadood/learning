@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creational Design Pattern</title>
+</head>
+<body>
+	<header>
+		<h1>Creational Design Pattern</h1>
+	</header>
+
+	<main>
+		<section>
+			<h1>Constructor Pattern</h1>
+			<p>Use to create new objects with their own object scope</p>
+
+			<h2>New Keyword</h2>
+			<h2>Example</h2>
+			<pre><code>
+				function ObjectName(params) {
+					this.params = params;
+					this.someFunction = function() {
+						return this.params;
+					}
+					// new keyword would add "return this;"
+				}
+			</code></pre>
+
+			<p>Drawback: this.someFunction is created everytime a Object is created</p>
+			<p>Solution: Use Prototype</p>
+		</section>	
+
+		<section>
+			<h1>Prototype/Class</h1>
+			
+			<h2>Prototype Example</h2>
+			<pre><code>
+				ObjectName.prototype.methodName = function() {};
+				// This prevents more than one creation of the same function
+			</code></pre>
+
+			<h2>Class Example</h2>
+			<pre><code>
+				'use strict'
+				// has to be in strict mode
+
+				class MyObject {
+					constructor (params) {
+						this.params = params;
+					};
+
+					myMethod () {
+						return "something";
+					};
+				} 
+			</code></pre>
+		</section>
+
+		<section>
+			<h1>Module Pattern</h1>
+			<p>Simple way to encapsulate methods --> create a toolbox</p>
+
+			<h2>Example</h2>
+			<pre><code>
+				var Module = {
+					method: function () {},
+					nextMethod: function () {}
+				}
+			</code></pre>
+
+			<p>Module Pattern: We need only one service/module for my application</p>
+		</section>
+	</main>
+</body>
+</html>
